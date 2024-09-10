@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: superior-slider-demo
+    env: static
+    staticPublishPath: .
