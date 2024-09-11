@@ -16,6 +16,18 @@
 
     <!-- FAV and Icons -->
     <link rel="icon" type="image/x-icon" href="./images/2.png" />
+
+    <style>
+      /* Add any additional styles here */
+      .code-block {
+        font-family: 'Courier New', Courier, monospace;
+        white-space: pre;
+      }
+      .code-line {
+        display: block;
+      }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
   </head>
 
   <body class="bg-slate-300 max-w-full overflow-x-hidden font-['ubuntu']">
@@ -74,52 +86,125 @@
         </div>
 
         <!-- Basic Slider -->
-        <div class="mt-[6rem] pb-14">
-          <h4 class="text-slate-800 text-xl lg:text-3xl font-bold mb-4 text-center">Basic Slider - Static</h4>
-          <div class="superior-slider w-full h-[20rem] md:h-[25rem] lg:h-[30rem] relative bg-gray-500 overflow-hidden">
-            <img class="superior-image-holder size-full object-cover" src="https://raw.githubusercontent.com/E37-Tech/superior-slider/master/images/slider-images/1.jpg" alt="Selected Image"/>
+        <div class="mt-[8rem] bg-white w-full py-6">
+          <h4 class="text-slate-800 text-lg lg:text-2xl font-bold mb-2 text-center">Basic Slider - Static</h4>
+          <div class="flex items-center justify-between w-[90%] mx-auto mb-4">
+            <div class="w-[18rem] h-[2.5rem] grid grid-cols-2">
+              <button id="selectItem1" class="group border-2 border-slate-800 text-slate-800 text-[0.9rem] rounded-l-md">
+                <i class="fa-solid fa-eye mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out"></i>
+                <span class="group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">Preview</span>
+              </button>
+              <button id="selectItem2" class="group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-r-md">
+                <i class="fa-solid fa-laptop mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out"></i>
+                <span class="group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">HTML Code</span>
+              </button>
+            </div>
+            <div class="relative inline-block w-[9rem]">
+              <button id="copyButton" class="group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-md w-full h-[2.5rem] hover:bg-transparent hover:text-slate-800">
+                <i class="fa-regular fa-clipboard mr-1 group-hover:text-[1rem] transition-all duration-300 ease-in-out"></i>
+                <span class="group-hover:text-[1rem] transition-all duration-300 ease-in-out">Copy Code</span>
+              </button>
+              <span id="tooltip" class="invisible absolute left-5 -top-8 px-2 py-1 text-sm text-white bg-slate-800 rounded opacity-0 transition-opacity duration-300">
+                Code copied!
+              </span>
+            </div>
+          </div>
 
-            <div class="superior-slide-wrapper hidden">
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/1.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/2.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/3.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/4.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/5.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/6.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/7.jpg"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/8.jpg"/>
+          <div class="h-[20rem] md:h-[25rem] lg:h-[30rem] w-full">
+            <div id="superior-item-1" class="h-full">
+              <div class="superior-slider w-full h-full relative bg-gray-500 overflow-hidden">
+                <img class="superior-image-holder size-full object-cover" src="https://raw.githubusercontent.com/E37-Tech/superior-slider/master/images/slider-images/1.jpg" alt="Selected Image"/>
+
+                <div class="superior-slide-wrapper hidden">
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/1.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/2.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/3.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/4.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/5.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/6.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/7.jpg"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/8.jpg"/>
+                  </div>
+                </div>
+                <div class="flex lg:grid text-white text-xl absolute bottom-0 right-0 z-10">
+                  <button class="superior-prev group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
+                    <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
+                    <i class="fa-solid fa-angle-left group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
+                  </button>
+                  <button class="superior-next group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
+                    <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
+                    <i class="fa-solid fa-angle-right group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="flex lg:grid text-white text-xl absolute bottom-0 right-0 z-10">
-              <button class="superior-prev group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
-                <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
-                <i class="fa-solid fa-angle-left group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
-              </button>
-              <button class="superior-next group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
-                <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
-                <i class="fa-solid fa-angle-right group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
-              </button>
+            <div id="superior-item-2" class="h-full hidden">
+              <div class="w-[90%] mx-auto h-full bg-slate-800 text-slate-200 rounded-lg overflow-auto">
+                <pre id="codeBlock" class="code-block bg-gray-800 text-gray-200 p-4 rounded-lg">
+<code class="language-html">
+&lt;div class="superior-slider w-full h-[20rem] md:h-[25rem] lg:h-[30rem] relative bg-gray-500 overflow-hidden"&gt;
+  &lt;img class="superior-image-holder size-full object-cover" src="https://raw.githubusercontent.com/E37-Tech/superior-slider/master/images/slider-images/1.jpg" alt="Selected Image"/&gt;
+  &lt;div class="superior-slide-wrapper hidden"&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/1.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/2.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/3.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/4.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/5.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/6.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/7.jpg"/&gt;
+    &lt;/div&gt;
+    &lt;div class="superior-slide-container"&gt;
+      &lt;img class="superior-slide" src="https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/8.jpg"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="flex lg:grid text-white text-xl absolute bottom-0 right-0 z-10"&gt;
+    &lt;button class="superior-prev group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800"&gt;
+      &lt;div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"&gt;&lt;/div&gt;
+      &lt;i class="fa-solid fa-angle-left group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button class="superior-next group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800"&gt;
+      &lt;div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"&gt;&lt;/div&gt;
+      &lt;i class="fa-solid fa-angle-right group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+                </pre>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- First Slider -->
-        <div class="pb-14">
+        <div class="pb-14 mt-10">
           <h4 class="text-slate-800 text-xl lg:text-3xl font-bold mb-4 text-center">First Slider - Static</h4>
           <div class="superior-slider w-full h-[20rem] md:h-[25rem] lg:h-[30rem] mx-auto relative bg-slate-500/80 border-t border-x border-slate-500  overflow-hidden">
             <img class="superior-image-holder size-full object-cover cursor-pointer" src="./images/slider-images/1.jpg" alt="Selected Image"/>
@@ -366,5 +451,8 @@
     </footer>
 
     <script src="node_modules/superior-slider/dist/superior-slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
