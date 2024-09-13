@@ -17,101 +17,128 @@
     <!-- FAV and Icons -->
     <link rel="icon" type="image/x-icon" href="./images/2.png" />
 
-    <style>
-      /* Add any additional styles here */
-      .code-block {
-        font-family: 'Courier New', Courier, monospace;
-        white-space: pre;
-      }
-      .code-line {
-        display: block;
-      }
-    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet">
   </head>
 
   <body class="bg-slate-300 max-w-full overflow-x-hidden font-['ubuntu']">
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-slate-900 text-white py-1">
-      <div class="container mx-auto flex justify-between items-center px-4">
+    <header class="w-full absolute top-0 z-[99] superior-bg-1 text-white text-[0.8rem] lg:text-[1rem] border-b border-white">
+      <div class="flex justify-between items-center px-6">
         <div class="text-xl font-bold">
-          <a href="#">
+          <a href="./index.html">
             <img class="w-auto h-[3.5rem] scale-75 hover:scale-90 transition-all duration-500 ease-in-out" src="./images/3.png" />
           </a>
         </div>
-        <nav>
+        <nav class="hidden md:block">
           <ul class="flex space-x-6">
             <li class="group cursor-pointer">
               <a href="#" class="group-hover:text-orange-600 transition-all duration-500 ease-in-out">Home</a>
-              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[2.4rem] transition-all duration-300 ease-in-out"></div>
+              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[2rem] transition-all duration-300 ease-in-out"></div>
             </li>
             <li class="group cursor-pointer">
               <a href="#" class="group-hover:text-orange-600 transition-all duration-500 ease-in-out">Features</a>
-              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[3.4rem] transition-all duration-300 ease-in-out"></div>
-            </li>
-            <li class="group cursor-pointer">
-              <a href="#" class="group-hover:text-orange-600 transition-all duration-500 ease-in-out">Demo</a>
-              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[2.4rem] transition-all duration-300 ease-in-out"></div>
+              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[2rem] transition-all duration-300 ease-in-out"></div>
             </li>
             <li class="group cursor-pointer">
               <a href="#" class="group-hover:text-orange-600 transition-all duration-500 ease-in-out">Contact</a>
-              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[3.4rem] transition-all duration-300 ease-in-out"></div>
+              <div class="h-[0.16rem] w-0 bg-orange-600 group-hover:w-[2rem] transition-all duration-300 ease-in-out"></div>
             </li>
           </ul>
         </nav>
+        <div class="flex space-x-6">
+          <button type="button" class="group text-sm font-medium border-b-2 border-white text-white inline-flex items-center justify-center xl:space-x-2 h-[2.5rem] px-2 lg:px-4">
+            <span class="hidden xl:block group-hover:-translate-x-2 transition-all duration-500 ease-in-out">Search</span><i class="fa-solid fa-magnifying-glass group-hover:-rotate-[45deg] transition-all duration-500 ease-in-out"></i>
+          </button>
+          <button type="button" data-target="superior-modal-target-1" class="md:hidden group superior-modal-button inline-flex justify-center items-center text-sm font-bold text-white shadow-md shadow-gray-900 border-2 border-white rounded hover:border-transparent hover:bg-orange-600 size-[2.5rem] transition-all duration-500 ease-in-out">
+            <span class="block pointer-events-none group-hover:hidden transition-all duration-700 ease-in-out">
+              <i class="fa-solid fa-bars"></i>
+            </span>
+            <span class="hidden pointer-events-none group-hover:block transition-all duration-700 ease-in-out">
+              <i class="fa-solid fa-bars-staggered"></i>
+            </span>
+          </button>
+        </div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="min-h-screen">
-      <section class="text-slate-800 w-full mb-[12rem]">
-        <div class="absolute left-5 top-[7.5rem] grid grid-cols-2 border border-gray-400 rounded-full divide-x divide-gray-500 h-10 shadow-lg shadow-gray-900 text-md z-10">
-          <button class="px-6 hover:bg-orange-600/80 rounded-l-full transition-all duration-500 ease-in-out" onclick="window.location.href='tel:#'">
-            <i class="fa-solid fa-phone mr-2"></i>Call Us
+    <!-- Modal -->
+    <div data-item="superior-modal-target-1" class="superior-modal-target hidden fixed z-[999] inset-0 bg-black/80 flex justify-end transition-all duration-500 ease-in-out">
+      <div class="relative z-[999] h-full w-[24rem] modal-bg text-white p-5 transform translate-x-full transition-transform duration-500 ease-in-out shadow-lg shadow-slate-900">
+        <div class="flex flex-col h-full p-6">
+          <!-- Close Button -->
+          <button class="close-modal self-end text-white text-xl hover:scale-110 transition-all duration-500 ease-in-out border-2 border-white size-8 hover:shadow-md hover:shadow-gray-900 rounded">
+            <i class="fa-solid fa-xmark pointer-events-none"></i>
           </button>
-          <button class="px-6 hover:bg-orange-600/80 transition-all duration-500 ease-in-out rounded-r-full" onclick="window.location.href='mailto:#'">
-            <i class="fa-solid fa-envelope mr-2"></i>Email Us
-          </button>
-        </div>
-
-        <div class="hidden md:block absolute right-10 top-[7.5rem] group">
-          <div class="relative">
-            <button class="text-slate-800 text-lg lg:text-xl size-[1.8rem] lg:size-[2.2rem] rounded-full border border-gray-600 scale-100 hover:scale-110 transition-all duration-500 ease-in-out">
-              <i class="fa-solid fa-house-chimney"></i>
+          
+          <!-- Menu Items -->
+          <div class="flex flex-col justify-center flex-grow space-y-6 border-b border-gray-200 pb-6 mb-6 text-white overflow-hidden">
+            <button class="group relative text-lg font-semibold py-2 px-4 group" onclick="location.href='./index.html'">
+              <div class="absolute inset-0 bg-slate-900 border-l border-b border-slate-500 -skew-x-12 translate-x-[1rem] group-hover:bg-slate-800 transition-all duration-500 ease-in-out"></div>
+              <div class="relative z-10 inline-flex items-center justify-center h-full w-full">
+                Home
+              </div>
             </button>
-            <div class="hidden group-hover:block transition-all duration-500 ease-in-out absolute top-1 -left-[3.5rem] lg:-left-[4.5rem] text-md lg:text-xl text-slate-800 font-semibold text-right z-50">
-              <p>Home</p>
-            </div>
+            <button class="relative text-lg font-semibold py-2 px-4 group" onclick="location.href='#'">
+              <div class="absolute inset-0 bg-orange-600 border-l border-b border-orange-400 -skew-x-12 translate-x-[1rem] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-right"></div>
+              <div class="relative z-10 inline-flex items-center justify-center h-full w-full">
+                Features
+              </div>
+            </button>
+            <button class="relative text-lg font-semibold py-2 px-4 group" onclick="location.href='#'">
+              <div class="absolute inset-0 bg-orange-600 border-l border-b border-orange-400 -skew-x-12 translate-x-[1rem] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-right"></div>
+              <div class="relative z-10 inline-flex items-center justify-center h-full w-full">
+                Contact
+              </div>
+            </button>
+          </div>
+          
+          <!-- Social Handles -->
+          <div class="inline-flex items-center justify-center space-x-2.5 text-white text-[1rem]">
+            <button class="rounded-full shadow-md shadow-gray-900 size-[1.8rem] border border-white hover:scale-[115%] hover:text-orange-400 hover:border-orange-600 transition-all duration-500 ease-in-out" onclick="location.href='https://github.com/E37-Tech/superior-slider'">
+              <i class="fa-brands fa-github"></i>
+            </button>
+            <button class="rounded-full shadow-md shadow-gray-900 size-[1.8rem] border border-white hover:scale-[115%] hover:text-orange-400 hover:border-orange-600 transition-all duration-500 ease-in-out" onclick="location.href='https://www.npmjs.com/package/superior-slider'">
+              <i class="fa-brands fa-npm"></i>
+            </button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+      <section class="superior-copier text-slate-800 w-full mt-[3rem] mb-[12rem]">
+        <!-- <div class="mt-12">
+        </div> -->
 
         <!-- Basic Slider -->
-        <div class="mt-[8rem] bg-white w-full py-6">
-          <h4 class="text-slate-800 text-lg lg:text-2xl font-bold mb-2 text-center">Basic Slider - Static</h4>
+        <div class="superior-item-wrapper w-full py-6">
+          <h4 class="text-slate-800 text-sm lg:text-lg font-bold mb-2 text-center">Basic Slider - Static</h4>
           <div class="flex items-center justify-between w-[90%] mx-auto mb-4">
             <div class="w-[18rem] h-[2.5rem] grid grid-cols-2">
-              <button id="selectItem1" class="group border-2 border-slate-800 text-slate-800 text-[0.9rem] rounded-l-md">
-                <i class="fa-solid fa-eye mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out"></i>
-                <span class="group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">Preview</span>
+              <button data-target="1" class="select-item group border-2 border-slate-800 text-slate-800 text-[0.9rem] rounded-l-md">
+                <i class="fa-solid fa-eye mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out pointer-events-none"></i>
+                <span class="pointer-events-none group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">Preview</span>
               </button>
-              <button id="selectItem2" class="group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-r-md">
-                <i class="fa-solid fa-laptop mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out"></i>
-                <span class="group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">HTML Code</span>
+              <button data-target="2" class="select-item group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-r-md">
+                <i class="fa-solid fa-laptop mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out pointer-events-none"></i>
+                <span class="pointer-events-none group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">HTML Code</span>
               </button>
             </div>
             <div class="relative inline-block w-[9rem]">
-              <button id="copyButton" class="group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-md w-full h-[2.5rem] hover:bg-transparent hover:text-slate-800">
-                <i class="fa-regular fa-clipboard mr-1 group-hover:text-[1rem] transition-all duration-300 ease-in-out"></i>
-                <span class="group-hover:text-[1rem] transition-all duration-300 ease-in-out">Copy Code</span>
+              <button data-target="copy-item-1" class="superior-copy-button group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-md w-full h-[2.5rem] hover:bg-transparent hover:text-slate-800">
+                <i class="fa-regular fa-clipboard mr-1 group-hover:text-[1rem] transition-all duration-300 ease-in-out pointer-events-none"></i>
+                <span class="pointer-events-none group-hover:text-[1rem] transition-all duration-300 ease-in-out">Copy Code</span>
               </button>
-              <span id="tooltip" class="invisible absolute left-5 -top-8 px-2 py-1 text-sm text-white bg-slate-800 rounded opacity-0 transition-opacity duration-300">
+              <span class="copy-tooltip invisible absolute left-5 -top-8 px-2 py-1 text-sm text-white bg-slate-800 rounded opacity-0 transition-opacity duration-300">
                 Code copied!
               </span>
             </div>
           </div>
 
           <div class="h-[20rem] md:h-[25rem] lg:h-[30rem] w-full">
-            <div id="superior-item-1" class="h-full">
+            <div data-item="1" class="superior-item h-full">
               <div class="superior-slider w-full h-full relative bg-gray-500 overflow-hidden">
                 <img class="superior-image-holder size-full object-cover" src="https://raw.githubusercontent.com/E37-Tech/superior-slider/master/images/slider-images/1.jpg" alt="Selected Image"/>
 
@@ -153,9 +180,9 @@
                 </div>
               </div>
             </div>
-            <div id="superior-item-2" class="h-full hidden">
+            <div data-item="2" class="superior-item h-full hidden">
               <div class="w-[90%] mx-auto h-full bg-slate-800 text-slate-200 rounded-lg overflow-auto">
-                <pre id="codeBlock" class="code-block bg-gray-800 text-gray-200 p-4 rounded-lg">
+                <pre data-item="copy-item-1" class="bg-gray-800 text-gray-200 p-4 rounded-lg">
 <code class="language-html">
 &lt;div class="superior-slider w-full h-[20rem] md:h-[25rem] lg:h-[30rem] relative bg-gray-500 overflow-hidden"&gt;
   &lt;img class="superior-image-holder size-full object-cover" src="https://raw.githubusercontent.com/E37-Tech/superior-slider/master/images/slider-images/1.jpg" alt="Selected Image"/&gt;
@@ -204,46 +231,121 @@
         </div>
 
         <!-- First Slider -->
-        <div class="pb-14 mt-10">
+        <div class="superior-item-wrapper mb-14 mt-10 bg-white w-full py-6">
           <h4 class="text-slate-800 text-xl lg:text-3xl font-bold mb-4 text-center">First Slider - Static</h4>
-          <div class="superior-slider w-full h-[20rem] md:h-[25rem] lg:h-[30rem] mx-auto relative bg-slate-500/80 border-t border-x border-slate-500  overflow-hidden">
-            <img class="superior-image-holder size-full object-cover cursor-pointer" src="./images/slider-images/1.jpg" alt="Selected Image"/>
+          <div class="flex items-center justify-between w-[90%] mx-auto mb-4">
+            <div class="w-[18rem] h-[2.5rem] grid grid-cols-2">
+              <button data-target="1" class="select-item group border-2 border-slate-800 text-slate-800 text-[0.9rem] rounded-l-md">
+                <i class="fa-solid fa-eye mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out pointer-events-none"></i>
+                <span class="pointer-events-none group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">Preview</span>
+              </button>
+              <button data-target="2" class="select-item group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-r-md">
+                <i class="fa-solid fa-laptop mr-1 group-hover:text-[1.1rem] transition-all duration-300 ease-in-out pointer-events-none"></i>
+                <span class="pointer-events-none group-hover:text-[1.1rem] transition-all duration-300 ease-in-out">HTML Code</span>
+              </button>
+            </div>
+            <div class="relative inline-block w-[9rem]">
+              <button data-target="copy-item-2" class="superior-copy-button group border-2 border-slate-800 bg-slate-800 text-white text-[0.9rem] rounded-md w-full h-[2.5rem] hover:bg-transparent hover:text-slate-800">
+                <i class="fa-regular fa-clipboard mr-1 group-hover:text-[1rem] transition-all duration-300 ease-in-out pointer-events-none"></i>
+                <span class="pointer-events-none group-hover:text-[1rem] transition-all duration-300 ease-in-out">Copy Code</span>
+              </button>
+              <span class="copy-tooltip invisible absolute left-5 -top-8 px-2 py-1 text-sm text-white bg-slate-800 rounded opacity-0 transition-opacity duration-300">
+                Code copied!
+              </span>
+            </div>
+          </div>
 
-            <div class="superior-slide-wrapper hidden lg:flex justify-center items-center border-t border-x border-slate-500 space-x-4 absolute bottom-0 right-[3.3rem] bg-gradient-to-r from-slate-300 via-slate-300 to transparent px-6 py-5 rounded-tl-xl z-10">
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/1.jpg" alt="Slide 1"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/2.jpg" alt="Slide 2"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/3.jpg" alt="Slide 3"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/4.jpg" alt="Slide 4"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/5.jpg" alt="Slide 5"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/6.jpg" alt="Slide 6"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/7.jpg" alt="Slide 7"/>
-              </div>
-              <div class="superior-slide-container">
-                <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/8.jpg" alt="Slide 8"/>
+          <div class="h-[20rem] md:h-[25rem] lg:h-[30rem] w-full">
+            <div data-item="1" class="superior-item h-full">
+              <div class="superior-slider w-full h-full relative bg-slate-500 border-t border-x border-slate-500  overflow-hidden">
+                <img class="superior-image-holder size-full object-cover cursor-pointer" src="./images/slider-images/1.jpg" alt="Selected Image"/>
+
+                <div class="superior-slide-wrapper hidden lg:flex justify-center items-center border-t border-x border-slate-500 space-x-4 absolute bottom-0 right-[3.3rem] bg-gradient-to-r from-slate-300 via-slate-300 to transparent px-6 py-5 rounded-tl-xl z-10">
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/1.jpg" alt="Slide 1"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/2.jpg" alt="Slide 2"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/3.jpg" alt="Slide 3"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/4.jpg" alt="Slide 4"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/5.jpg" alt="Slide 5"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/6.jpg" alt="Slide 6"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/7.jpg" alt="Slide 7"/>
+                  </div>
+                  <div class="superior-slide-container">
+                    <img class="superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out" src="./images/slider-images/8.jpg" alt="Slide 8"/>
+                  </div>
+                </div>
+                <div class="flex lg:grid text-white text-xl absolute bottom-0 right-0 z-10">
+                  <button class="superior-prev group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
+                    <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
+                    <i class="fa-solid fa-angle-left group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
+                  </button>
+                  <button class="superior-next group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
+                    <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
+                    <i class="fa-solid fa-angle-right group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="flex lg:grid text-white text-xl absolute bottom-0 right-0 z-10">
-              <button class="superior-prev group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
-                <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
-                <i class="fa-solid fa-angle-left group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
-              </button>
-              <button class="superior-next group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800">
-                <div class="absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></div>
-                <i class="fa-solid fa-angle-right group-hover:rotate-[90deg] transition-all duration-300 ease-in-out"></i>
-              </button>
+
+            <div data-item="2" class="superior-item h-full hidden">
+              <div class="w-[90%] mx-auto h-full bg-slate-800 text-slate-200 rounded-lg overflow-auto">
+                <pre data-item="copy-item-2" class="bg-gray-800 text-gray-200 p-4 rounded-lg">
+<code class="language-html">
+&lt;div class=&quot;superior-slider w-full h-[20rem] md:h-[25rem] lg:h-[30rem] relative bg-slate-500 border-t border-x border-slate-500  overflow-hidden&quot;&gt;
+  &lt;img class=&quot;superior-image-holder size-full object-cover cursor-pointer&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/1.jpg&quot; alt=&quot;Selected Image&quot;/&gt;
+
+  &lt;div class=&quot;superior-slide-wrapper hidden lg:flex justify-center items-center border-t border-x border-slate-500 space-x-4 absolute bottom-0 right-[3.3rem] bg-gradient-to-r from-slate-300 via-slate-300 to transparent px-6 py-5 rounded-tl-xl z-10&quot;&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/1.jpg&quot; alt=&quot;Slide 1&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/2.jpg&quot; alt=&quot;Slide 2&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/3.jpg&quot; alt=&quot;Slide 3&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/4.jpg&quot; alt=&quot;Slide 4&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/5.jpg&quot; alt=&quot;Slide 5&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/6.jpg&quot; alt=&quot;Slide 6&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/7.jpg&quot; alt=&quot;Slide 7&quot;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;superior-slide-container&quot;&gt;
+      &lt;img class=&quot;superior-slide w-16 h-16 object-cover cursor-pointer rounded shadow-md shadow-gray-900 border border-gray-300 hover:rotate-[4deg] hover:scale-[115%] transition-all duration-500 ease-in-out&quot; src=&quot;https://raw.githubusercontent.com/E37-Tech/superior-slider-demo/master/images/slider-images/8.jpg&quot; alt=&quot;Slide 8&quot;/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;flex lg:grid text-white text-xl absolute bottom-0 right-0 z-10&quot;&gt;
+    &lt;button class=&quot;superior-prev group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800&quot;&gt;
+      &lt;div class=&quot;absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left&quot;&gt;&lt;/div&gt;
+      &lt;i class=&quot;fa-solid fa-angle-left group-hover:rotate-[90deg] transition-all duration-300 ease-in-out&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;superior-next group relative size-[3.3rem] bg-slate-800/80 hover:text-slate-800&quot;&gt;
+      &lt;div class=&quot;absolute inset-0 bg-white/80 translate-x-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left&quot;&gt;&lt;/div&gt;
+      &lt;i class=&quot;fa-solid fa-angle-right group-hover:rotate-[90deg] transition-all duration-300 ease-in-out&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+                </pre>
+              </div>
             </div>
           </div>
         </div>
@@ -439,13 +541,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-4">
-      <div class="container mx-auto flex justify-between items-center px-4">
-        <p>&copy; 2024 Superior Slider. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="#" class="hover:text-orange-600 transition-all duration-500 ease-in-out"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="hover:text-orange-600 transition-all duration-500 ease-in-out"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="hover:text-orange-600 transition-all duration-500 ease-in-out"><i class="fab fa-instagram"></i></a>
+    <footer class="relative bg-cover bg-center bg-no-repeat bg-[url('./images/footer-img.jpg')]">
+      <div class="absolute inset-0 bg-slate-900/80"></div>
+      <div class="relative z-10 flex justify-between items-center px-6 py-10 md:py-16">
+        <a href="./index.html">
+          <img class="w-auto h-[3rem] scale-75 hover:scale-90 transition-all duration-500 ease-in-out" src="./images/3.png" />
+        </a>
+        <div class="flex space-x-6 text-slate-200 text-[2rem]">
+          <a href="https://github.com/E37-Tech/superior-slider" class="hover:text-orange-600 hover:scale-[115%] transition-all duration-500 ease-in-out"><i class="fab fa-github"></i></a>
+          <a href="https://www.npmjs.com/package/superior-slider" class="hover:text-orange-600 hover:scale-[115%] transition-all duration-500 ease-in-out"><i class="fa-brands fa-npm"></i></a>
+        </div>
+      </div>
+      <div class="relative z-10 bg-slate-900 text-sm text-slate-400 flex justify-between items-center px-4 py-4 md:py-8 border-t border-slate-500">
+        <div class="md:flex"><p>&copy; 2024 Superior Slider.</p> <p class="md:ml-2">All rights reserved.</p></div>
+        <div class="italic">
+          A product of<span class="text-orange-600 ml-2">E37-Tech</span>
         </div>
       </div>
     </footer>

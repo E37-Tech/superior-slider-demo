@@ -1,0 +1,13 @@
+.superior-bg-1 {
+  background-color: #0F172B;
+}
+
+.superior-bg-2 {
+  backdrop-filter: blur(10px);
+  background-color: rgba(15, 23, 43, 0.6);
+}
+
+.modal-bg {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
