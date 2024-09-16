@@ -64,55 +64,85 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const openButtons = document.querySelectorAll('.superior-modal-button');
-  const modals = document.querySelectorAll('.superior-modal-target');
-  const closeButtons = document.querySelectorAll('.close-modal');
+  const openHeaderButtons = document.querySelectorAll('.superior-header-modal-button');
+  const closeHeaderButtons = document.querySelectorAll('.close-header-modal');
 
-  const openModal = (modal) => {
-    modal.classList.remove('hidden');
-    modal.offsetHeight;
-    modal.querySelector('div').classList.remove('translate-x-full');
-    modal.querySelector('div').classList.add('translate-x-0');
+  const openHeaderModal = (headerModal) => {
+    headerModal.classList.remove('hidden');
+    headerModal.offsetHeight;
+    headerModal.querySelector('div').classList.remove('translate-x-full');
+    headerModal.querySelector('div').classList.add('translate-x-0');
     document.body.style.overflow = 'hidden';
   };
 
-  const closeModal = (modal) => {
-    modal.querySelector('div').classList.add('translate-x-full');
-    modal.querySelector('div').classList.remove('translate-x-0');
+  const closeModal = (headerModal) => {
+    headerModal.querySelector('div').classList.add('translate-x-full');
+    headerModal.querySelector('div').classList.remove('translate-x-0');
     setTimeout(() => {
-      modal.classList.add('hidden');
+      headerModal.classList.add('hidden');
       document.body.style.overflow = '';
     }, 500);
   };
 
-  openButtons.forEach(button => {
+  openHeaderButtons.forEach(button => {
     button.addEventListener('click', () => {
       const targetId = button.getAttribute('data-target');
-      const modal = document.querySelector(`[data-item="${targetId}"]`);
+      const headerModal = document.querySelector(`[data-item="${targetId}"]`);
       
-      if (modal) {
-        openModal(modal);
+      if (headerModal) {
+        openHeaderModal(headerModal);
       }
     });
   });
 
-  closeButtons.forEach(button => {
+  closeHeaderButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const modal = button.closest('.superior-modal-target');
+      const headerModal = button.closest('.superior-header-modal-target');
       
-      if (modal) {
-        closeModal(modal);
+      if (headerModal) {
+        closeModal(headerModal);
       }
     });
   });
 
   document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('superior-modal-target')) {
-      const modal = event.target;
+    if (event.target.classList.contains('superior-header-modal-target')) {
+      const headerModal = event.target;
       
-      if (modal) {
-        closeModal(modal);
+      if (headerModal) {
+        closeModal(headerModal);
       }
     }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modalButtons = document.querySelectorAll('.superior-modal-button');
+  const body = document.body;
+
+  modalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const targetModal = document.querySelector(`[data-item="${targetId}"]`);
+      
+      if (targetModal) {
+        targetModal.classList.remove('hidden');
+        body.classList.add('overflow-hidden');
+      }
+    });
+  });
+
+  document.querySelectorAll('.superior-modal-target').forEach(modal => {
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        modal.classList.add('hidden');
+        body.classList.remove('overflow-hidden');
+      }
+    });
+
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+      modal.classList.add('hidden');
+      body.classList.remove('overflow-hidden');
+    });
   });
 });
