@@ -47,7 +47,7 @@
           </ul>
         </nav>
         <div class="flex space-x-6">
-          <button type="button" class="group text-sm font-medium border-b-2 border-white text-white inline-flex items-center justify-center xl:space-x-2 h-[2.5rem] px-2 lg:px-4">
+          <button type="button" data-target="superior-modal-target-1" class="superior-modal-button group text-sm font-medium border-b-2 border-white text-white inline-flex items-center justify-center xl:space-x-2 h-[2.5rem] px-2 lg:px-4">
             <span class="hidden xl:block group-hover:-translate-x-2 transition-all duration-500 ease-in-out">Search</span><i class="fa-solid fa-magnifying-glass group-hover:-rotate-[45deg] transition-all duration-500 ease-in-out"></i>
           </button>
           <button type="button" data-target="superior-header-modal-target-1" class="md:hidden group superior-header-modal-button inline-flex justify-center items-center text-sm font-bold text-white shadow-md shadow-gray-900 border-2 border-white rounded hover:border-transparent hover:bg-orange-600 size-[2.5rem] transition-all duration-500 ease-in-out">
@@ -62,7 +62,7 @@
       </div>
     </header>
 
-    <!-- Modal -->
+    <!-- Header Modal -->
     <div data-item="superior-header-modal-target-1" class="superior-header-modal-target hidden fixed z-[999] inset-0 bg-black/80 flex justify-end transition-all duration-500 ease-in-out">
       <div class="relative z-[999] h-full w-[24rem] modal-bg text-white p-5 transform translate-x-full transition-transform duration-500 ease-in-out shadow-lg shadow-slate-900">
         <div class="flex flex-col h-full p-6">
@@ -103,6 +103,21 @@
             </button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div data-item="superior-modal-target-1" class="superior-modal-target fixed inset-0 z-[999] hidden bg-black/80 flex items-center justify-center transition-opacity duration-500 ease-in-out">
+      <div class="bg-white bg-opacity-30 backdrop-blur-md p-6 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 relative">
+        <button class="close-modal absolute top-0 right-0 text-gray-800 bg-white/80 size-8 rounded-tr-lg rounded-bl-lg shadow-md hover:shadow-gray-900 text-lg hover:text-2xl transition-all duration-500 ease-in-out">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <form id="search-form" action="/search" method="GET">
+          <div class="relative">
+            <input type="text" name="query" class="search-input w-full bg-transparent border-b-2 border-white outline-none py-2 pr-20 text-lg text-white pl-12 placeholder-white" placeholder="Search for..." required>
+            <i class="clear-button fa-solid fa-xmark absolute right-12 top-1/2 transform -translate-y-1/2 cursor-pointer text-xl text-red-500 opacity-0 transition-opacity duration-300"></i>
+          </div>
+        </form>
       </div>
     </div>
 

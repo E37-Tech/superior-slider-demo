@@ -146,3 +146,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const inputs = document.querySelectorAll('.search-input');
+  const clearButtons = document.querySelectorAll('.clear-button');
+
+  inputs.forEach((input, index) => {
+    const clearButton = clearButtons[index];
+
+    input.addEventListener('input', () => toggleClearButton(input, clearButton));
+    clearButton.addEventListener('click', (event) => clearInput(input, clearButton));
+  });
+
+  function toggleClearButton(input, clearButton) {
+    const hasValue = input.value.length > 0;
+    clearButton.style.opacity = hasValue ? '1' : '0';
+  }
+
+  function clearInput(input, clearButton) {
+    input.value = '';
+    input.focus();
+    toggleClearButton(input, clearButton);
+  }
+});
